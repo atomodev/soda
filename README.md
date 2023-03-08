@@ -4,24 +4,29 @@ A blueprint for authentication UIs based on Supabase in plain JavaScript
 ## Getting started
 The following steps will get you up and running with Soda.
 
+- download the repository
+- move to the soda_app folder
+- download Supabase with curl https://unpkg.com/@supabase/supabase-js@2.10.0/dist/umd/supabase.js > globals/externals/supabase.js
+
 
 ## Application structure
 
 ```
 +-- soda_app
-|   +-- globals
-|   |   +-- scripts
-|   |   |   +-- init
-|   |   |   +-- auth
-|   |   +-- styles
-|   |   +-- fonts
-|   |   +-- icons
 |   +-- components
 |   |   +-- header
 |   |   +-- footer
 |   |   +-- navigation
 |   |   +-- sidebar
 |   |   +-- modal
+|   +-- globals
+|   |   +-- scripts
+|   |   |   +-- sodaapp.js
+|   |   |   +-- sodaauth.js
+|   |   +-- external
+|   |   +-- styles
+|   |   +-- fonts
+|   |   +-- icons
 |   +-- pages
 |   |   +-- login
 |   |   |   +-- login.html
@@ -32,7 +37,7 @@ The following steps will get you up and running with Soda.
 |   |   +-- reset_password
 |   |   +-- profile
 |   |   +-- dashboard
-|   +-- style_guide
+|   +-- styleguide
 |   +-- index.html
 |   +-- index.js
 |   +-- index.css
