@@ -28,6 +28,7 @@ class Auth {
         }
     }
 
+
     async login(email, password) {
         const returnValue =  {"data": null, "error": null}
 
@@ -45,8 +46,15 @@ class Auth {
         }
     }
 
+
+    async logout() {
+        const {error} = await this.supabase.auth.signOut();
+        return error;
+    }
+
+
     async getUser() {
-        const { data: { user } } = await supabase.auth.getUser()
+        const { data: { user } } = await this.supabase.auth.getUser()
 
         if (user) {
             this.user = user;
@@ -54,6 +62,19 @@ class Auth {
         } else {
             this.user = null;
             this.isAuth = false;
+        }
+        return this.user
+    }
+
+
+    async passwordReset(email, redirect) {
+        const { data, error } = await this.supabase.auth.resetPasswordForEmail(
+            email, {redirectTo: redirect});
+
+        if (error) {
+            return error.message;
+        } else {
+            return null;
         }
     }
 

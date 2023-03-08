@@ -10,12 +10,15 @@ const $userEmail = document.getElementById('user-email');
 
 // local functions
 async function getUser() {
-    const { data: { user } } = await sodaApp.supabase.auth.getUser()
-    $userEmail.innerHTML = user.email;
+    const user = await sodaApp.auth.getUser();
+
+    if (user) {
+        $userEmail.innerHTML = user.email;
+    } else {
+        console.log('no user, please login');
+    }
 }
 
 
-// event handlers on page load
-window.addEventListener('load', async (e) => {
-    getUser();
-});
+// event handlers, call local functions
+await getUser();

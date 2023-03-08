@@ -32,9 +32,10 @@ The following steps will get you up and running with Soda.
 |   |   |   +-- login.html
 |   |   |   +-- login.js
 |   |   |   +-- login.css
+|   |   +-- logout
+|   |   +-- password_reset
+|   |   +-- password_update
 |   |   +-- signup
-|   |   +-- forgot_password
-|   |   +-- reset_password
 |   |   +-- profile
 |   |   +-- dashboard
 |   +-- styleguide
