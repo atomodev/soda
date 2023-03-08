@@ -5,8 +5,8 @@ A blueprint for authentication UIs based on Supabase in plain JavaScript
 The following steps will get you up and running with Soda.
 
 - download the repository
-- move to the soda_app folder
-- download Supabase with curl https://unpkg.com/@supabase/supabase-js@2.10.0/dist/umd/supabase.js > globals/externals/supabase.js
+- setup a supabase project
+- add or change the supabase url and key to the soda_app/globals/scripts/sodaapp.js file
 
 
 ## Application structure
@@ -57,3 +57,4 @@ The following steps will get you up and running with Soda.
 - globals: general scripts, styles, etc. for all pages
 - components: small reusable html-elements 
 - pages: public html-pages
+- pages logic: flat js files for each page, without classes
